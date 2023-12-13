@@ -1,8 +1,5 @@
-import React from 'react';
-
 import { Header } from '../../Components/Header/Header';
 import { MainForm } from '../../Form/MainForm';
-import styles from './style.module.scss';
 const example = [
   {
     title: 'Telegram',

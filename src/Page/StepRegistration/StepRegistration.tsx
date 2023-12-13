@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { ErrorChild } from '../../Components/Modal/Error/Error';
 import { Modal } from '../../Components/Modal/Modal';
 import { SuccessChild } from '../../Components/Modal/Success/SuccessChild';
-import { StepProgers } from '../../Components/StepProgerss/StepProgerss';
+import { StepProgres } from '../../Components/StepProgerss/StepProgerss';
 import { Step1 } from '../../Form/Step1/Step1';
 import { Step2 } from '../../Form/Step2/Step2';
 import { Step3 } from '../../Form/Step3/Step3';
@@ -14,6 +14,7 @@ export const StepRegistration = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [complete, setComplete] = useState(false);
   const [visibleModal, setVisibleModal] = useState<boolean>(false);
+  const [isError, setIsError] = useState<boolean>(false);
 
   visibleModal
     ? document.body.classList.add('modal-open')
@@ -30,6 +31,7 @@ export const StepRegistration = () => {
     case 3:
       stepComponent = (
         <Step3
+          setIsError={setIsError}
           setVisibleModal={setVisibleModal}
           currentStep={currentStep}
           setCurrentStep={setCurrentStep}
@@ -43,11 +45,15 @@ export const StepRegistration = () => {
 
   return (
     <div className={styles.container}>
-      <StepProgers currentStep={currentStep} complete={complete} steps={steps} />
+      <StepProgres currentStep={currentStep} complete={complete} steps={steps} />
       {stepComponent}
       {visibleModal && (
         <Modal setVisibleModal={setVisibleModal}>
-          <ErrorChild setVisibleModal={setVisibleModal} />
+          {isError ? (
+            <ErrorChild setVisibleModal={setVisibleModal} />
+          ) : (
+            <SuccessChild setVisibleModal={setVisibleModal} />
+          )}
         </Modal>
       )}
     </div>

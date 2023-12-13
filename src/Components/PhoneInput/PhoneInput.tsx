@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-undef */
-import React, { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 import InputMask from 'react-input-mask';
 
 import styles from './style.module.scss';

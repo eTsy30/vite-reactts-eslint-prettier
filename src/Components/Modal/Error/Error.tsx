@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 interface Props {
   setVisibleModal: (visible: boolean) => void;
 }
@@ -8,11 +8,10 @@ import ErrorIcon from '../../../Assets/Icon/Error.svg?react';
 import Exit from '../../../Assets/Icon/Exit.svg?react';
 import style from './style.module.scss';
 export const ErrorChild: FC<Props> = ({ setVisibleModal }) => {
-  const navigate = useNavigate();
   return (
     <section className={style.container}>
       <div className={style.titleContainer}>
-        <h2>Форма успешно отправлена</h2>
+        <h2>Oшибка</h2>
         <Exit
           onClick={() => {
             setVisibleModal(false);

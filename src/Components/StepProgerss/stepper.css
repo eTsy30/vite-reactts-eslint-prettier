@@ -11,18 +11,24 @@
   content: '';
   background-color: rgba(166, 166, 166, 1);
   position: absolute;
-  width: 45rem;
+  width: 340px;
   height: 3px;
   right: 50%;
   top: 8px;
   transform: translateY(-50%);
 }
 
-@media (max-width: 499px) {
+@media (max-width: 680px) {
   .step-item:not(:first-child)::before {
-    width: 50rem;
+    width: 25rem;
   }
 }
+@media (max-width: 499px) {
+  .step-item:not(:first-child)::before {
+    width: 18rem;
+  }
+}
+
 .step {
   width: 16px;
   height: 16px;

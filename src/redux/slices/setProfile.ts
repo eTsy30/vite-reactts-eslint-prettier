@@ -28,24 +28,6 @@ const initialState: IProfile = {
   status: false,
 };
 
-export const fakePost = createAsyncThunk(
-  'post/fake',
-  async (data: IProfile, { rejectWithValue }) => {
-    try {
-      const success = Math.random() < 0.5;
-      await new Promise((resolve) => {
-        setTimeout(() => {
-          resolve({ success, data });
-        }, 2000);
-      });
-
-      return success;
-    } catch (error: any) {
-      return rejectWithValue(error.message);
-    }
-  },
-);
-
 export const setProfileSlice = createSlice({
   name: 'setProfile',
   initialState,
@@ -85,11 +67,6 @@ export const setProfileSlice = createSlice({
     setStep3: (state, action: PayloadAction<{ about: string }>) => {
       state.about = action.payload.about;
     },
-  },
-  extraReducers: (builder) => {
-    builder.addCase(fakePost.fulfilled, (state, action: PayloadAction<boolean>) => {
-      state.status = action.payload;
-    });
   },
 });
 

@@ -4,9 +4,7 @@
 
 import React, { FC, useState } from 'react';
 import { Field, Form } from 'react-final-form';
-import { FieldArray } from 'react-final-form-arrays';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import uuid from 'react-uuid';
 
 import Trach from '../../Assets/Icon/Trach.svg?react';
@@ -16,16 +14,9 @@ interface Step1Props {
   currentStep: number;
   setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
 }
-interface IState {
-  id: string;
-}
-interface ITodo {
-  id: string;
-  text: string;
-}
+
 export const Step2: FC<Step1Props> = ({ currentStep, setCurrentStep }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [inputValues, setInputValues] = useState<Record<string, string>>({});
 
@@ -38,29 +29,17 @@ export const Step2: FC<Step1Props> = ({ currentStep, setCurrentStep }) => {
       const [id, text] = field;
       return text;
     });
-    console.log(testValue, 'fff');
+    values.advantages = testValue;
 
-    // dispatch(setStep2(values));
+    dispatch(setStep2(values));
     setCurrentStep(currentStep + 1);
   };
-  const [fields, setFields] = useState<IState[]>([]);
-  const [todos, setTodos] = useState<ITodo[]>([]);
 
-  const handleAddInput = (target: any) => {
-    console.log('######', todos);
-    const test = { [uuid()]: '+' };
-    console.log(test, 'test');
-
+  const handleAddInput = () => {
     setInputValues({
       ...inputValues,
       [uuid()]: '',
     });
-    console.log(inputValues, 'inputValues');
-
-    // if (!inputValue) return;
-    // setTodos([...todos, { id: uuid(), text: inputValue }]);
-    // setInputValue('');
-    // setFields([...fields, { id: uuid() }]);
   };
   const mutators = {
     push: (args: any[], state: any, utils: any) => {
@@ -71,19 +50,11 @@ export const Step2: FC<Step1Props> = ({ currentStep, setCurrentStep }) => {
     },
   };
   const handleRemoveInput = (idRemove: string) => {
-    // values.inputs = values.inputs.filter((value: any) => value !== id);
-    // console.log(values.inputs);
-    // const newArray = fields.filter((field: any) => field.id !== id);
-    // setFields(newArray);
-    // console.log(newArray, values);
-    // setInputValues(Object.entries(inputValues).filter((field: any) => field.id !== id));
     const testValue = Object.entries(inputValues).filter((field: any) => {
-      const [id, text] = field;
+      const [id] = field;
       return id !== idRemove;
     });
     setInputValues(Object.fromEntries(testValue));
-
-    // setTodos(inputValues.filter((field: any) => field.id !== id));
   };
   const handleChange = ({ target }: any) => {
     setInputValues({
@@ -96,43 +67,13 @@ export const Step2: FC<Step1Props> = ({ currentStep, setCurrentStep }) => {
       <Form
         onSubmit={onSubmit}
         mutators={mutators}
-        render={({ handleSubmit, values, form }) => (
+        render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit} className={styles.formStyle}>
             <div className={styles.formWrapper}>
-              {/*
-                  <div className={styles.fieldsContainer}>
-                    <label className={styles.title}>Преимущества</label>
-                    {todos.map((field: any, index: number) => (
-                      <Field key={index} name={`inputs[${index}]`}>
-                        {({ input }) => (
-                          <div key={field.id} className={styles.advantagesContainer}>
-                            <input
-                              id={`field-advatages-${index + 1}`}
-                              {...input}
-                              type="text"
-                              className={styles.inputItem}
-                              placeholder="Placeholder"
-                            />
-                            <Trach
-                              id={`button-remove-${index + 1}`}
-                              onClick={() => {
-                                handleRemoveInput(field.text, values);
-                              }}
-                            />
-                          </div>
-                        )}
-                      </Field>
-                    ))}
-                  </div>
-                )}
-              </FieldArray> */}
               <div className={styles.fieldsContainer}>
                 <label className={styles.title}>Преимущества</label>
                 {Object.entries(inputValues).map((todo) => {
-                  const [id, text] = todo;
-
-                  console.log(id, 'url');
-
+                  const [id] = todo;
                   return (
                     <div className={styles.advantagesContainer}>
                       <input

@@ -1,16 +1,15 @@
 import './stepper.css';
 
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
 
 import Check from '../../Assets/Icon/Check Small.svg?react';
-import styles from './style.module.scss';
 
-interface IStepProgers {
+interface IStepProgres {
   currentStep: number;
   complete: boolean;
   steps: string[];
 }
-export const StepProgers: FC<IStepProgers> = ({ currentStep, complete, steps }) => {
+export const StepProgres: FC<IStepProgres> = ({ currentStep, complete, steps }) => {
   return (
     <>
       <div className="wwer">
