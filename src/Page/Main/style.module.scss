@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+.mainPageContainer {
+  margin: 24px auto;
+  width: 90rem;
+  height: 70rem;
+  border-radius: 12px 12px 0px 0px;
+  background: $grey-0-white;
+  padding: 25px;
+}
+@media (max-width: 767px) {
+  .mainPageContainer {
+    width: 100%;
+  }
+}

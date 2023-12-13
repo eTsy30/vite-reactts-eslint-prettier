@@ -1,0 +1,97 @@
+@import '../../styles/variables.scss';
+.step2Container {
+}
+.fieldsContainer {
+  max-width: 336px;
+}
+.advantagesContainer {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.inputItem {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.48);
+  font-family: TT Travels;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 10px 12px;
+  width: 100%;
+}
+.fieldsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.buttonAdd {
+  width: 44px;
+  height: 44px;
+  background: none;
+  color: $purple-100;
+  font-size: 30px;
+  border-radius: 4px;
+  border: 1.5px solid $purple-100;
+  margin-bottom: 24px;
+}
+.title {
+  color: $work-presets-text-white-mode-primary-g-800;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+.formStyle {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.groupSbpTitle {
+  color: $work-presets-text-white-mode-primary-g-800;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.buttonBack {
+  border-radius: 4px;
+  border: 1.5px solid $purple-100;
+  color: $purple-100;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 12px 16px;
+}
+.buttonNext {
+  padding: 12px 16px;
+  border-radius: 4px;
+  background: $purple-100;
+  color: $grey-0-white;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  border: none;
+}
+.buttonGroup {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

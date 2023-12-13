@@ -1,0 +1,57 @@
+@import '../../styles/variables.scss';
+.selectComponent {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  background: rgba(0, 0, 0, 0.04);
+
+  color: rgba(0, 0, 0, 0.48);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 12px;
+  width: 100%;
+  margin-top: 8px;
+  appearance: none;
+  background-image: url(../../Assets/Icon/Chevron.svg);
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+}
+.buttonBack {
+  border-radius: 4px;
+  border: 1.5px solid $purple-100;
+  color: $purple-100;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 12px 16px;
+}
+.buttonNext {
+  padding: 12px 16px;
+  border-radius: 4px;
+  background: $purple-100;
+  color: $grey-0-white;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  border: none;
+}
+.buttonGroup {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.formStyle {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 300px;
+}

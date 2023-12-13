@@ -1,0 +1,78 @@
+.step-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+}
+
+.step-item:not(:first-child)::before {
+  content: '';
+  background-color: rgba(166, 166, 166, 1);
+  position: absolute;
+  width: 45rem;
+  height: 3px;
+  right: 50%;
+  top: 8px;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 499px) {
+  .step-item:not(:first-child)::before {
+    width: 50rem;
+  }
+}
+.step {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  position: relative;
+  background-color: #a6a6a6;
+  border-radius: 50%;
+  font-weight: 600;
+  color: white;
+}
+
+.active .step {
+  background-color: #2563eb;
+}
+
+.complete .step {
+  background-color: #2563eb;
+}
+.activeP {
+  color: #2563eb;
+  font-weight: 800;
+}
+.stepNumber {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.complete p {
+  color: #2563eb;
+  font-weight: 800;
+
+  text-align: center;
+  font-style: normal;
+}
+
+.complete:not(:first-child)::before,
+.active:not(:first-child)::before {
+  background-color: #2563eb;
+}
+span {
+  background-color: white;
+  width: 4px;
+  height: 4px;
+  border-radius: 22px;
+}
+.wwer {
+  overflow: hidden;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
