@@ -77,7 +77,7 @@ export const Step2: FC<Step1Props> = ({ currentStep, setCurrentStep }) => {
                 {Object.entries(inputValues).map((todo) => {
                   const [id] = todo;
                   return (
-                    <div className={styles.advantagesContainer}>
+                    <div key={id} className={styles.advantagesContainer}>
                       <input
                         className={styles.inputItem}
                         type="text"

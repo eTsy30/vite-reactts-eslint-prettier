@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-no-undef */
 import React, { useState } from 'react';
 
+import { useAppSelector } from '../../../store/hook';
 import { ErrorChild } from '../../Components/Modal/Error/Error';
 import { Modal } from '../../Components/Modal/Modal';
 import { SuccessChild } from '../../Components/Modal/Success/SuccessChild';
@@ -43,6 +44,8 @@ export const StepRegistration = () => {
       stepComponent = null;
       break;
   }
+  const count = useAppSelector((state) => state.setProfile);
+  console.log(count);
 
   return (
     <div className={styles.container}>
