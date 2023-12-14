@@ -1,37 +1,56 @@
-# Vite + React + Typescript + Eslint + Prettier
+# Тестовое задание для Fractal Web
 
-A starter for React with Typescript with the fast Vite and all static code testing with Eslint and formatting with Prettier.
+## Описание проекта
 
-![Vite + React + Typescript + Eslint + Prettier](/resources/screenshot.png)
+Этот проект разработан в качестве выполнения тестового задания для Fractal Web.
 
-I found out about Vite and I wanted to have a boilerplate for the technologies that I use. You can find more about these in the following links: [Vite](https://github.com/vitejs/vite), [React](https://reactjs.org/), [Typescript](https://www.typescriptlang.org/), [Eslint](https://eslint.org/), [Prettier](https://prettier.io/).
+### Форма описания профиля
 
-## Installation
+Требуется разработать форму отправки данных по готовому макету. Форма представляет собой 3 отдельных таба (шага), между которыми можно переключаться. Ниже приведены детали каждого этапа формы:
 
-Clone the repo and run `yarn install`
+#### Первый экран
 
-or Run command
+На первом экране необходимо добавить информацию о себе. По нажатию на кнопку "Начать" происходит переход на форму, а при переходе меняется роут.
 
-```
-npx degit TheSwordBreaker/vite-reactts-eslint-prettier project-name
-```
+- `nickname`: строковое значение, максимальная длина 30 символов, только буквы и цифры (спец символы запрещены).
+- `name`: строковое значение, максимальная длина 50 символов, только буквы.
+- `surname`: строковое значение, максимальная длина 50 символов, только буквы.
+- `phone`: строковое значение, формат записи: +7 (900) 000-00-00 - реализованная маска ввода.
+- `email`: строковое значение, валидация по стандарту email.
 
-## Start
+#### Второй экран
 
-After the successfull installation of the packages: `yarn dev`
+На этом этапе формы есть валидация значений конкретного шага. В форме есть:
 
-## Steps in Vscode
+- `sex`: enum 'man' | 'woman', реализован как select.
+- `advantages`: массив строк, возможность добавлять новые поля и их валидация.
+- `radio`: number блок, группа элементов RadioGroup.
+- `checkbox`: массив number, группа элементов CheckboxGroup.
 
-#### (works with better with this template)
+#### Третий экран
 
-1. Install Eslint and prettier extension for vs code.
-2. Make Sure Both are enabled
-3. Make sure all packages are Installed. (Mostly Eslint and prettier in node_modules)
-4. Enable formatOnSave of vs code
-5. Open a .tsx file and check if the bottom right corners of vs code have Eslint and Prettier with a double tick
+- `about`: textarea блок, максимальная длина 200 символов, счётчик символов без пробелов в правом нижнем углу.
 
-![Screenshot (253)_LI](https://user-images.githubusercontent.com/52120562/162486286-7383a737-d555-4f9b-a4dd-c4a81deb7b96.jpg)
+### Технические требования
 
-If Everything is Good Then It Should Work, but let me new if something else happens
+Разработка выполнена с использованием следующего стека:
 
-Made with ❤️ by theSwordBreaker(we Destory all types of sword ⚡)
+- React
+- Typescript
+- Redux 
+- SCSS modules 
+- React final form
+
+
+### Структура проекта
+
+### Запуск проекта
+
+1. Установите зависимости:
+   npm install
+   npm run dev
+
+### Дополнительная информация 
+Платформа дляхостинга - 'vercel.com',
+Link-'https://vite-reactts-eslint-prettier-ashy.vercel.app/' 
+Этот `README.md` содержит общие сведения о проекте, технические требования, описание формы, структуру проекта и инструкции по запуску проекта. 
