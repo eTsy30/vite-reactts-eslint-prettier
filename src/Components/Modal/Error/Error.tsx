@@ -2,8 +2,6 @@ import { FC } from 'react';
 interface Props {
   setVisibleModal: (visible: boolean) => void;
 }
-import { useNavigate } from 'react-router-dom';
-
 import ErrorIcon from '../../../Assets/Icon/Error.svg?react';
 import Exit from '../../../Assets/Icon/Exit.svg?react';
 import style from './style.module.scss';

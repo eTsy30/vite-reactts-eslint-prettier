@@ -1,3 +1,4 @@
+/* eslint-disable react/no-deprecated */
 import './index.css';
 
 import React from 'react';
